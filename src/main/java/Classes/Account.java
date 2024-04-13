@@ -28,15 +28,18 @@ public class Account {
         }
         else{
             balance-=amount;
+            System.out.println("Withdraw done successfully");
             return true;
         }
     }
     public void deposit(double amount){
         balance+=amount;
+        System.out.println("Deposit done successfully");
     }
     public void loanRequest(double amount){
         Loan loan = new Loan(amount);
         loans.add(loan);
+        System.out.println("Loan done successfully");
     }
     public boolean transfer(Account receiver, double amount){
 
@@ -49,6 +52,7 @@ public class Account {
             record.add(transaction);
             balance-=amount;
             receiver.setBalance((receiver.getBalance()+amount));
+            System.out.println("Transfer done successfully");
             return true;
         }
 

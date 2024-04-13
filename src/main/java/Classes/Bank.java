@@ -35,7 +35,21 @@ public class Bank {
             System.out.println("Balance: " + account.getBalance());
             System.out.println(account.getLoans());
             System.out.println(account.getRecord());
+
         }
+        Account acc = Login(1,"a");
+    }
+
+    public static Account Login(int id,String password){
+        for (Account account : accounts) {
+            if ((account.getId() == id) && account.getPassword().equals(password)) {
+                System.out.println("The Account was found");
+                return account;
+            }
+
+        }
+        System.out.println("The Account was not found");
+        return null;
     }
 
 }
