@@ -51,5 +51,14 @@ public class Bank {
         System.out.println("The Account was not found");
         return null;
     }
-
+    public static Account searchAcc(int id){
+        for (Account account : accounts) {
+            if ((account.getId() == id)) {
+                System.out.println("The Account was found");
+                return account;
+            }
+        }
+        System.out.println("account was not found!");
+        return null;
+    }
 }
