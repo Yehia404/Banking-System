@@ -43,7 +43,10 @@ public class ServicesController {
         stage.show();
     }
     public void balancePage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("balance.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("balance.fxml"));
+        root = loader.load();
+        BalanceController balanceController = loader.getController();
+        balanceController.setDetails();
         stage = (Stage) balanceBtn.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

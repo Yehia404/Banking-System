@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Bank {
 
     public static ArrayList<Account> accounts  = new ArrayList<Account>();
+    public static Account user;
     public Bank(){
         Account Acc1 = new Account("Yehia",1,"a","Yehiasakr@gmail.com",2000);
         Account Acc2 = new Account("John", 2, "b", "john@example.com", 1500);
@@ -44,6 +45,7 @@ public class Bank {
         for (Account account : accounts) {
             if ((account.getId() == id) && account.getPassword().equals(password)) {
                 System.out.println("The Account was found");
+                user = account;
                 return account;
             }
 
