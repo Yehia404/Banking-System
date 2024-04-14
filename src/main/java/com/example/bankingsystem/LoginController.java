@@ -23,6 +23,8 @@ public class LoginController {
     @FXML private TextField accField;
     @FXML private PasswordField passField;
     @FXML private Button loginButton;
+    @FXML private Label label;
+
     public void loginPage(ActionEvent event) throws IOException {
         int accId = Integer.parseInt(accField.getText());
         String password = passField.getText();
@@ -33,7 +35,10 @@ public class LoginController {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-
+        }
+        else{
+            label.setStyle("-fx-text-fill: red;");
+            label.setText("Invalid Credentials");
         }
     }
 

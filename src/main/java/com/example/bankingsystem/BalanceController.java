@@ -15,13 +15,15 @@ public class BalanceController {
     @FXML private Stage stage;
     @FXML private Scene scene;
     @FXML private Parent root;
-    @FXML private Label emailLalbel;
+    @FXML private Label emailLabel;
     @FXML private Label nameLabel;
     @FXML private Label balanceLabel;
+    @FXML private Label idLabel;
     @FXML private Button Homesbtn;
     public void setDetails(){
-        emailLalbel.setText("Email: "+ Bank.user.getEmail());
+        emailLabel.setText("Email: "+ Bank.user.getEmail());
         nameLabel.setText("Name: "+ Bank.user.getName());
+        idLabel.setText("ID: "+ Bank.user.getId());
         balanceLabel.setText("Balance: "+ Bank.user.getBalance());
     }
     public void ServicesPage(ActionEvent event) throws IOException {

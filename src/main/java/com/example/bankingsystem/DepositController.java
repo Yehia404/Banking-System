@@ -24,6 +24,7 @@ public class DepositController {
     public void deposit(ActionEvent event) throws IOException{
         double am = Double.parseDouble(amount.getText());
         Bank.user.deposit(am);
+        currentbalance.setStyle("-fx-text-fill: green;");
         currentbalance.setText("Current Balance: "+Bank.user.getBalance());
     }
     public void ServicesPage(ActionEvent event) throws IOException {
