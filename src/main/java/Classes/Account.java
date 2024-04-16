@@ -20,7 +20,7 @@ public class Account {
         this.password=password;
         Random random = new Random();
         int min=1266;
-        this.Id = min+random.nextInt();
+        this.Id = Math.abs(min+random.nextInt());
         record= new ArrayList<>();
         loans = new ArrayList<>();
     }

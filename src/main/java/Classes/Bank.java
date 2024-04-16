@@ -7,11 +7,11 @@ public class Bank {
     public static ArrayList<Account> accounts  = new ArrayList<Account>();
     public static Account user;
     public Bank(){
-        Account Acc1 = new Account("Yehia",1,"a","Yehiasakr@gmail.com",2000);
-        Account Acc2 = new Account("John", 2, "b", "john@example.com", 1500);
-        Account Acc3 = new Account("Emily", 3, "c", "emily@example.com", 3000);
-        Account Acc4 = new Account("Michael", 4, "d", "michael@example.com", 2500);
-        Account Acc5 = new Account("Sarah", 5, "e", "sarah@example.com", 1800);
+        Account Acc1 = new Account("Yehia","a","Yehiasakr@gmail.com",2000);
+        Account Acc2 = new Account("John",  "b", "john@example.com", 1500);
+        Account Acc3 = new Account("Emily",  "c", "emily@example.com", 3000);
+        Account Acc4 = new Account("Michael", "d", "michael@example.com", 2500);
+        Account Acc5 = new Account("Sarah",  "e", "sarah@example.com", 1800);
         accounts.add(Acc1);
         accounts.add(Acc2);
         accounts.add(Acc3);
