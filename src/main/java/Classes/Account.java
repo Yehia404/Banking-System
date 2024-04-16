@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class Account {
     private String name;
+    private static int counter=0;
     private int Id;
     private String password;
     private String email;
@@ -18,9 +19,7 @@ public class Account {
         this.balance=balance;
         this.email=email;
         this.password=password;
-        Random random = new Random();
-        int min=1266;
-        this.Id = Math.abs(min+random.nextInt());
+        this.Id = counter++;
         record= new ArrayList<>();
         loans = new ArrayList<>();
     }
