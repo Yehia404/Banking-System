@@ -48,7 +48,7 @@
             <Insets top="-60.0" />
          </GridPane.margin>
       </TextField>
-      <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginPage" prefHeight="30.0" prefWidth="90.0" text="Login" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginPage" prefHeight="26.0" prefWidth="90.0" text="Login" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
       <PasswordField fx:id="passField" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets top="20.0" />
@@ -59,5 +59,6 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Button fx:id="createButton" mnemonicParsing="false" onAction="#createAccountPage" prefHeight="26.0" prefWidth="112.0" text="Create Account" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
    </children>
 </GridPane>

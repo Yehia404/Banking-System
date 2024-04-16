@@ -23,6 +23,7 @@ public class LoginController {
     @FXML private TextField accField;
     @FXML private PasswordField passField;
     @FXML private Button loginButton;
+    @FXML private Button createButton;
     @FXML private Label label;
 
     public void loginPage(ActionEvent event) throws IOException {
@@ -40,6 +41,13 @@ public class LoginController {
             label.setStyle("-fx-text-fill: red;");
             label.setText("Invalid Credentials");
         }
+    }
+    public void createAccountPage(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("createacc.fxml"));
+        stage = (Stage) createButton.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }
