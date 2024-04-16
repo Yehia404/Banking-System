@@ -1,6 +1,7 @@
 package Classes;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Account {
     private String name;
@@ -12,12 +13,14 @@ public class Account {
     private ArrayList<Transaction> record;
 
 
-    public Account(String name,int Id,String password,String email,double balance){
-        this.Id=Id;
+    public Account(String name,String password,String email,double balance){
         this.name=name;
         this.balance=balance;
         this.email=email;
         this.password=password;
+        Random random = new Random();
+        int min=1266;
+        this.Id = min+random.nextInt();
         record= new ArrayList<>();
         loans = new ArrayList<>();
     }
