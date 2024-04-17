@@ -1,11 +1,12 @@
 package com.example.bankingsystem;
 
 public class Loan {
-    private static int loanId = 0;
+    private int loanId;
+    private static int counter=0;
     private double loanAmount;
 
     public Loan(double loanAmount) {
-        loanId++;
+        this.loanId=counter++;
         this.loanAmount = loanAmount;
     }
 
