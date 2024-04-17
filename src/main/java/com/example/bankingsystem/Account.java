@@ -57,6 +57,17 @@ public class Account {
         }
 
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Account other = (Account) obj;
+        return this.Id == other.Id && this.name.equals(other.getName()) && this.password.equals(other.getPassword()) && this.email.equals(other.getEmail());
+    }
     public int getId() {
         return Id;
     }
