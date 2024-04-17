@@ -58,6 +58,7 @@ public class AccountTest {
     @AfterEach
     public void deleteAcc(){
         acc = null;
+        assertNull(acc);
     }
 
 }

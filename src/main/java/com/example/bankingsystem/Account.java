@@ -57,6 +57,7 @@ public class Account {
         }
 
     }
+
     @Override
     public boolean equals(Object obj){
         if (this == obj) {
@@ -68,6 +69,7 @@ public class Account {
         Account other = (Account) obj;
         return this.Id == other.Id && this.name.equals(other.getName()) && this.password.equals(other.getPassword()) && this.email.equals(other.getEmail());
     }
+
     public int getId() {
         return Id;
     }
