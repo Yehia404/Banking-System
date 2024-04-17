@@ -1,7 +1,5 @@
-package Classes;
-
+package com.example.bankingsystem;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Account {
     private String name;
@@ -11,7 +9,7 @@ public class Account {
     private String email;
     private double balance;
     private ArrayList<Loan> loans;
-    private ArrayList<Transaction> record;
+    private ArrayList<Transaction> transactions;
 
 
     public Account(String name,String password,String email,double balance){
@@ -20,7 +18,7 @@ public class Account {
         this.email=email;
         this.password=password;
         this.Id = counter++;
-        record= new ArrayList<>();
+        transactions = new ArrayList<>();
         loans = new ArrayList<>();
     }
     public boolean withdraw(double amount){
@@ -51,7 +49,7 @@ public class Account {
         }
         else{
             Transaction transaction = new Transaction(this,receiver,amount);
-            record.add(transaction);
+            transactions.add(transaction);
             balance-=amount;
             receiver.setBalance((receiver.getBalance()+amount));
             System.out.println("Transfer done successfully");
@@ -105,15 +103,15 @@ public class Account {
         return loans;
     }
 
-    public void setRecord(ArrayList<Transaction> record) {
-        this.record = record;
+    public void setTransactions(ArrayList<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
     public void setLoans(ArrayList<Loan> loans) {
         this.loans = loans;
     }
 
-    public ArrayList<Transaction> getRecord() {
-        return record;
+    public ArrayList<Transaction> getTransactions() {
+        return transactions;
     }
 }

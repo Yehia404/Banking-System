@@ -1,4 +1,4 @@
-package Classes;
+package com.example.bankingsystem;
 
 public class Loan {
     private static int loanId = 0;

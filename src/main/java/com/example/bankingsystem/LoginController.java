@@ -1,18 +1,16 @@
 package com.example.bankingsystem;
 
-import Classes.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static Classes.Bank.Login;
+import static com.example.bankingsystem.Bank.Login;
 
 
 public class LoginController {

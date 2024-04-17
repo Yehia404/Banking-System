@@ -1,6 +1,5 @@
 package com.example.bankingsystem;
 
-import Classes.Bank;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -1,4 +1,4 @@
-package Classes;
+package com.example.bankingsystem;
 
 import java.util.ArrayList;
 
@@ -35,7 +35,7 @@ public class Bank {
             System.out.println("Password: " + account.getPassword());
             System.out.println("Balance: " + account.getBalance());
             System.out.println(account.getLoans());
-            System.out.println(account.getRecord());
+            System.out.println(account.getTransactions());
 
         }
         Account acc = Login(1,"a");
