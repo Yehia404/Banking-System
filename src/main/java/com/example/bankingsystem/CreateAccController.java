@@ -33,7 +33,7 @@ public class CreateAccController {
             stage.setScene(scene);
             stage.show();
     }
-    private boolean isEmailValid(String email) {
+    public boolean isEmailValid(String email) {
         // Regular expression for email validation
         String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.com$";
 
@@ -44,16 +44,31 @@ public class CreateAccController {
         return pattern.matcher(email).matches();
     }
 
+    public boolean emailExists(String email){
+        for (Account acc : Bank.accounts){
+            if (acc.getEmail().equals(email)){
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     public void createAccountPage(ActionEvent event) throws IOException {
         String name = nameField.getText();
         String email= emailField.getText();
         if(isEmailValid(email)) {
-            String password = passField.getText();
-            Account acc = new Account(name, password, email, 0);
-            Bank.accounts.add(acc);
-            label.setStyle("-fx-text-fill: green;");
-            label.setText("Your Account ID is "+ String.valueOf(acc.getId()));
+            if(!emailExists(email)) {
+                String password = passField.getText();
+                Account acc = new Account(name, password, email, 0);
+                Bank.accounts.add(acc);
+                label.setStyle("-fx-text-fill: green;");
+                label.setText("Your Account ID is " + String.valueOf(acc.getId()));
+            }
+            else {
+                label.setStyle("-fx-text-fill: red;");
+                label.setText("Email Already Exists");
+            }
         }
         else {
             label.setStyle("-fx-text-fill: red;");
