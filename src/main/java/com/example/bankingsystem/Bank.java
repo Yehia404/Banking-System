@@ -1,10 +1,11 @@
 package com.example.bankingsystem;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Bank {
 
-    public static ArrayList<Account> accounts  = new ArrayList<Account>();
+    public static HashSet<Account> accounts  = new HashSet<Account>();
     public static Account user;
     public Bank(){
         Account Acc1 = new Account("Yehia","a","Yehiasakr@gmail.com",2000);

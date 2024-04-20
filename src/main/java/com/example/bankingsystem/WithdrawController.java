@@ -8,7 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.stage.Stage;
+import javafx.util.converter.DoubleStringConverter;
 
 import java.io.IOException;
 
@@ -21,17 +23,24 @@ public class WithdrawController {
     @FXML private TextField amount;
     @FXML private Label currentbalance;
     public void withdraw(ActionEvent event) throws IOException {
-        double am = Double.parseDouble(amount.getText());
-        boolean bool = Bank.user.withdraw(am);
-        if(bool){
-            currentbalance.setStyle("-fx-text-fill: green;");
-            currentbalance.setText("Current Balance: "+Bank.user.getBalance());
-        }
-        else{
+        TextFormatter<Double> formatter = new TextFormatter<>(new DoubleStringConverter(), 0d);
+        amount.setTextFormatter(formatter);
+        Double am = formatter.getValue();
+        if (am != null) {
+            boolean bool = Bank.user.withdraw(am);
+            if (bool) {
+                currentbalance.setStyle("-fx-text-fill: green;");
+                currentbalance.setText("Current Balance: " + Bank.user.getBalance());
+            } else {
+                currentbalance.setStyle("-fx-text-fill: red;");
+                currentbalance.setText("Sorry, your balance is insufficient");
+            }
+        } else {
             currentbalance.setStyle("-fx-text-fill: red;");
-            currentbalance.setText("Sorry, your balance is insufficient");
+            currentbalance.setText("Please enter a valid amount");
         }
     }
+
     public void ServicesPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("services.fxml"));
         stage = (Stage) homebtn.getScene().getWindow();
