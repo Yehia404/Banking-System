@@ -1,4 +1,5 @@
-import com.example.bankingsystem.*;
+import com.example.classes.Account;
+import com.example.classes.Bank;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 

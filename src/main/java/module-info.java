@@ -6,4 +6,6 @@ module com.example.bankingsystem {
 
     opens com.example.bankingsystem to javafx.fxml;
     exports com.example.bankingsystem;
+    exports com.example.classes;
+    opens com.example.classes to javafx.fxml;
 }

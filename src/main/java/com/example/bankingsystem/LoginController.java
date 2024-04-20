@@ -1,5 +1,6 @@
 package com.example.bankingsystem;
 
+import com.example.classes.Account;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static com.example.bankingsystem.Bank.Login;
+import static com.example.classes.Bank.Login;
 
 
 public class LoginController {

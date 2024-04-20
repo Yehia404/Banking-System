@@ -1,4 +1,4 @@
-package com.example.bankingsystem;
+package com.example.classes;
 
 public class Loan {
     private int loanId;

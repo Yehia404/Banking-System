@@ -1,4 +1,4 @@
-package com.example.bankingsystem;
+package com.example.classes;
 import java.util.ArrayList;
 
 public class Account {
