@@ -46,7 +46,7 @@ public class CreateAccController {
 
     public boolean emailExists(String email){
         for (Account acc : Bank.accounts){
-            if (acc.getEmail().equals(email)){
+            if (acc.getEmail().equalsIgnoreCase(email)){
                 return true;
             }
         }
