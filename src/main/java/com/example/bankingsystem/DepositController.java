@@ -22,6 +22,11 @@ public class DepositController {
     @FXML private TextField amount;
     @FXML private Label currentbalance;
     public void deposit(ActionEvent event) throws IOException{
+        if (amount.getText().isEmpty()) {
+            currentbalance.setStyle("-fx-text-fill: red;");
+            currentbalance.setText("Please enter a valid amount");
+
+        }
         double am = Double.parseDouble(amount.getText());
         Bank.user.deposit(am);
         currentbalance.setStyle("-fx-text-fill: green;");

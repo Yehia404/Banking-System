@@ -23,24 +23,25 @@ public class WithdrawController {
     @FXML private Button confirm;
     @FXML private TextField amount;
     @FXML private Label currentbalance;
+
     public void withdraw(ActionEvent event) throws IOException {
-        TextFormatter<Double> formatter = new TextFormatter<>(new DoubleStringConverter(), 0d);
-        amount.setTextFormatter(formatter);
-        Double am = formatter.getValue();
-        if (am != null) {
-            boolean bool = Bank.user.withdraw(am);
-            if (bool) {
-                currentbalance.setStyle("-fx-text-fill: green;");
-                currentbalance.setText("Current Balance: " + Bank.user.getBalance());
-            } else {
-                currentbalance.setStyle("-fx-text-fill: red;");
-                currentbalance.setText("Sorry, your balance is insufficient");
-            }
-        } else {
+        if (amount.getText().isEmpty()) {
             currentbalance.setStyle("-fx-text-fill: red;");
             currentbalance.setText("Please enter a valid amount");
+
+        }
+        double am = Double.parseDouble(amount.getText());
+        boolean bool = Bank.user.withdraw(am);
+        if(bool){
+            currentbalance.setStyle("-fx-text-fill: green;");
+            currentbalance.setText("Current Balance: "+Bank.user.getBalance());
+        }
+        else{
+            currentbalance.setStyle("-fx-text-fill: red;");
+            currentbalance.setText("Sorry, your balance is insufficient");
         }
     }
+
 
     public void ServicesPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("services.fxml"));

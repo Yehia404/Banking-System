@@ -57,10 +57,25 @@ public class CreateAccController {
 
 
     public void createAccountPage(ActionEvent event) throws IOException {
+        if (nameField.getText().isEmpty()) {
+            label.setStyle("-fx-text-fill: red;");
+            label.setText("Please enter a name");
+            return;
+        }
+        if (emailField.getText().isEmpty()) {
+            label.setStyle("-fx-text-fill: red;");
+            label.setText("Please enter a valid Email");
+            return;
+        }
         String name = nameField.getText();
         String email= emailField.getText();
         if(isEmailValid(email)) {
             if(!emailExists(email)) {
+                if (passField.getText().isEmpty()) {
+                    label.setStyle("-fx-text-fill: red;");
+                    label.setText("Please enter a password");
+                    return;
+                }
                 String password = passField.getText();
                 Account acc = new Account(name, password, email, 0);
                 Bank.accounts.add(acc);

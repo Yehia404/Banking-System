@@ -26,6 +26,16 @@ public class LoginController {
     @FXML private Label label;
 
     public void loginPage(ActionEvent event) throws IOException {
+        if (accField.getText().isEmpty()) {
+            label.setStyle("-fx-text-fill: red;");
+            label.setText("Please enter a valid Account Id");
+            return;
+        }
+        if (passField.getText().isEmpty()) {
+            label.setStyle("-fx-text-fill: red;");
+            label.setText("Please enter a valid password");
+            return;
+        }
         int accId = Integer.parseInt(accField.getText());
         String password = passField.getText();
         Account acc = Login(accId,password);

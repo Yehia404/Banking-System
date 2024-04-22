@@ -30,6 +30,10 @@ public class LoanController {
     }
 
     public void loanRequest(ActionEvent event) throws IOException {
+        if (amountField.getText().isEmpty()) {
+            label.setStyle("-fx-text-fill: red;");
+            label.setText("Please enter a valid amount");
+        }
         double amount = Double.parseDouble(amountField.getText());
         Bank.user.loanRequest(amount);
         label.setStyle("-fx-text-fill: green;");

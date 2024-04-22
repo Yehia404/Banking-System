@@ -36,6 +36,16 @@ public class TransferController {
     }
 
     public void Transfer(ActionEvent event) throws IOException {
+        if (accountField.getText().isEmpty()) {
+            label.setStyle("-fx-text-fill: red;");
+            label.setText("Please enter a valid Account Id");
+            return;
+        }
+        if (amountField.getText().isEmpty()) {
+            label.setStyle("-fx-text-fill: red;");
+            label.setText("Please enter a valid amount");
+            return;
+        }
         int id = Integer.parseInt(accountField.getText());
         double amount = Double.parseDouble((amountField.getText()));
 
@@ -44,14 +54,14 @@ public class TransferController {
             label.setStyle("-fx-text-fill: red;");
             label.setText("Invalid ID");
         }
-
-        if(Bank.user.transfer(receiver,amount)){
-            label.setStyle("-fx-text-fill: green;");
-            label.setText("Transfer is Successful");
-        }
         else {
-            label.setStyle("-fx-text-fill: red;");
-            label.setText("Insufficient Funds");
+            if (Bank.user.transfer(receiver, amount)) {
+                label.setStyle("-fx-text-fill: green;");
+                label.setText("Transfer is Successful");
+            } else {
+                label.setStyle("-fx-text-fill: red;");
+                label.setText("Insufficient Funds");
+            }
         }
     }
 }
