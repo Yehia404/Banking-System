@@ -2,13 +2,14 @@ package com.example.classes;
 
 public class Transaction {
 
-    private static  int transactionNo = 0;
+    private static  int counter= 0;
+    private int transactionNo;
     private Account senderAcc;
     private Account receiverAcc;
     private double amount;
 
     public Transaction(Account senderAcc, Account receiverAcc, double amount) {
-        transactionNo++;
+        transactionNo = counter++;
         this.senderAcc = senderAcc;
         this.receiverAcc = receiverAcc;
         this.amount = amount;
