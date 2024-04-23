@@ -39,7 +39,6 @@ public class Bank {
 
         }
         Account acc = Login(0,"a");
-        Account acc1 = Login(100,"a");
     }
 
     public static Account Login(int id,String password){

@@ -23,6 +23,7 @@ public class ServicesController {
     @FXML private Button depositBtn;
     @FXML private Button withdrawBtn;
     @FXML private Button loginBtn;
+    @FXML private Button statementBtn;
     public void loginPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("login.fxml"));
         stage = (Stage) loginBtn.getScene().getWindow();
@@ -64,6 +65,16 @@ public class ServicesController {
     public void withdrawPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("withdraw.fxml"));
         stage = (Stage) withdrawBtn.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void statementPage(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("statement.fxml"));
+        root = loader.load();
+        StatementController statementController = loader.getController();
+        statementController.listStatement();
+        stage = (Stage) balanceBtn.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
