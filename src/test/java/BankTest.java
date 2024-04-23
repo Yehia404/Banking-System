@@ -22,7 +22,6 @@ public class BankTest {
         //id=0,pass=a
         Account acc1 = Bank.accounts.get(0);
         Account acc2 = Bank.Login(0,"a");
-       System.out.println(acc2.getId());
         assertTrue(acc1.equals(acc2));
         assertTrue(acc1.equals(Bank.user));
         assertNotNull(Bank.user);
