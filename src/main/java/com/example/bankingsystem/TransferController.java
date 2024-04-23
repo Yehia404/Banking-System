@@ -47,6 +47,11 @@ public class TransferController {
             return;
         }
         int id = Integer.parseInt(accountField.getText());
+        if(id == Bank.user.getId()){
+            label.setStyle("-fx-text-fill: red;");
+            label.setText("Cant transfer to same Account");
+            return;
+        }
         double amount = Double.parseDouble((amountField.getText()));
 
         Account receiver = Bank.searchAcc(id);
