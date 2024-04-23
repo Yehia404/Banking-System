@@ -47,8 +47,10 @@ public class Transaction {
     @Override
     public String toString() {
         return "Transaction No: " + transactionNo +
-                "\nSender Account: " + senderAcc.getName() +
-                "\nReceiver Account: " + receiverAcc.getName() +
+                "\nSender Account Name: " + senderAcc.getName() +
+                "\nSender ID: " + senderAcc.getId() +
+                "\nReceiver Account Name: " + receiverAcc.getName() +
+                "\nReciever ID: " + receiverAcc.getId() +
                 "\nAmount: " + amount;
     }
 }

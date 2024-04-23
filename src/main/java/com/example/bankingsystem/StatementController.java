@@ -31,6 +31,8 @@ public class StatementController {
     @FXML private Label label2;
     @FXML private Label label3;
     @FXML private Label label4;
+    @FXML private Label label5;
+    @FXML private Label label6;
 
     public void listStatement() {
         ObservableList<Transaction> observableList = FXCollections.observableArrayList(Bank.user.getTransactions());
@@ -43,9 +45,11 @@ public class StatementController {
 
                 // Set the text of the labels using the transaction details
                 label1.setText("Transaction No: " + transaction.getTransactionNo());
-                label2.setText("Sender Account: " + transaction.getSenderAcc().getName());
-                label3.setText("Receiver Account: " + transaction.getReceiverAcc().getName());
-                label4.setText("Amount: " + transaction.getAmount());
+                label2.setText("Sender Account Name: " + transaction.getSenderAcc().getName());
+                label3.setText("Sender ID: " + transaction.getSenderAcc().getId());
+                label4.setText("Receiver Account Name: " + transaction.getReceiverAcc().getName());
+                label5.setText("Reciever ID: " + transaction.getReceiverAcc().getId());
+                label6.setText("Amount: " + transaction.getAmount());
             }
         });
     }
