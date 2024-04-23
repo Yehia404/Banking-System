@@ -46,27 +46,38 @@ public class TransferController {
             label.setText("Please enter a valid amount");
             return;
         }
-        int id = Integer.parseInt(accountField.getText());
-        if(id == Bank.user.getId()){
-            label.setStyle("-fx-text-fill: red;");
-            label.setText("Cant transfer to same Account");
-            return;
-        }
-        double amount = Double.parseDouble((amountField.getText()));
-
-        Account receiver = Bank.searchAcc(id);
-        if(receiver == null) {
-            label.setStyle("-fx-text-fill: red;");
-            label.setText("Invalid ID");
-        }
-        else {
-            if (Bank.user.transfer(receiver, amount)) {
-                label.setStyle("-fx-text-fill: green;");
-                label.setText("Transfer is Successful");
-            } else {
+        if (accountField.getText().matches("\\d+")) {
+            int id = Integer.parseInt(accountField.getText());
+            if (id == Bank.user.getId()) {
                 label.setStyle("-fx-text-fill: red;");
-                label.setText("Insufficient Funds");
+                label.setText("Cant transfer to same Account");
+                return;
             }
+            if(amountField.getText().matches("\\d+(\\.\\d+)?")) {
+                double amount = Double.parseDouble((amountField.getText()));
+
+                Account receiver = Bank.searchAcc(id);
+                if (receiver == null) {
+                    label.setStyle("-fx-text-fill: red;");
+                    label.setText("Invalid ID");
+                } else {
+                    if (Bank.user.transfer(receiver, amount)) {
+                        label.setStyle("-fx-text-fill: green;");
+                        label.setText("Transfer is Successful");
+                    } else {
+                        label.setStyle("-fx-text-fill: red;");
+                        label.setText("Insufficient Funds");
+                    }
+                }
+            }
+            else{
+                label.setStyle("-fx-text-fill: red;");
+                label.setText("Please enter numbers in amount!");
+            }
+        }
+        else{
+            label.setStyle("-fx-text-fill: red;");
+            label.setText("Please enter numbers in id field!");
         }
     }
 }

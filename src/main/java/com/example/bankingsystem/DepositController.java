@@ -27,10 +27,16 @@ public class DepositController {
             currentbalance.setText("Please enter a valid amount");
 
         }
-        double am = Double.parseDouble(amount.getText());
-        Bank.user.deposit(am);
-        currentbalance.setStyle("-fx-text-fill: green;");
-        currentbalance.setText("Current Balance: "+Bank.user.getBalance());
+        if(amount.getText().matches("\\d+(\\.\\d+)?")) {
+            double am = Double.parseDouble(amount.getText());
+            Bank.user.deposit(am);
+            currentbalance.setStyle("-fx-text-fill: green;");
+            currentbalance.setText("Current Balance: " + Bank.user.getBalance());
+        }
+        else{
+            currentbalance.setStyle("-fx-text-fill: red;");
+            currentbalance.setText("Please enter numbers!");
+        }
     }
     public void ServicesPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("services.fxml"));

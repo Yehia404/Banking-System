@@ -36,19 +36,24 @@ public class LoginController {
             label.setText("Please enter a valid password");
             return;
         }
-        int accId = Integer.parseInt(accField.getText());
-        String password = passField.getText();
-        Account acc = Login(accId,password);
-        if(acc != null){
-            root = FXMLLoader.load(getClass().getResource("services.fxml"));
-            stage = (Stage) loginButton.getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+        if (accField.getText().matches("\\d+")) {
+            int accId = Integer.parseInt(accField.getText());
+            String password = passField.getText();
+            Account acc = Login(accId, password);
+            if (acc != null) {
+                root = FXMLLoader.load(getClass().getResource("services.fxml"));
+                stage = (Stage) loginButton.getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                label.setStyle("-fx-text-fill: red;");
+                label.setText("Invalid Credentials");
+            }
         }
         else{
             label.setStyle("-fx-text-fill: red;");
-            label.setText("Invalid Credentials");
+            label.setText("Please enter id in numbers!");
         }
     }
     public void createAccountPage(ActionEvent event) throws IOException {

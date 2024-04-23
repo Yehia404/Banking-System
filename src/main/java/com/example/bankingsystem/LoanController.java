@@ -37,9 +37,15 @@ public class LoanController {
             label.setStyle("-fx-text-fill: red;");
             label.setText("Please enter a valid amount");
         }
-        double amount = Double.parseDouble(amountField.getText());
-        Bank.user.loanRequest(amount);
-        label.setStyle("-fx-text-fill: green;");
-        label.setText("Loan Request is Successful");
+        if(amountField.getText().matches("\\d+(\\.\\d+)?")) {
+            double amount = Double.parseDouble(amountField.getText());
+            Bank.user.loanRequest(amount);
+            label.setStyle("-fx-text-fill: green;");
+            label.setText("Loan Request is Successful");
+        }
+        else{
+            label.setStyle("-fx-text-fill: red;");
+            label.setText("Please enter numbers!");
+        }
     }
 }

@@ -5,8 +5,8 @@ import org.junit.platform.suite.api.SuiteDisplayName;
 @Suite
 @SuiteDisplayName("System Test Suite")
 @SelectClasses({
-        AccountTest.class,
         BankTest.class,
+        AccountTest.class,
         LoanTest.class,
         TransactionTest.class
 })

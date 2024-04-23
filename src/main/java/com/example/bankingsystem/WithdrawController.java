@@ -30,15 +30,20 @@ public class WithdrawController {
             currentbalance.setText("Please enter a valid amount");
 
         }
-        double am = Double.parseDouble(amount.getText());
-        boolean bool = Bank.user.withdraw(am);
-        if(bool){
-            currentbalance.setStyle("-fx-text-fill: green;");
-            currentbalance.setText("Current Balance: "+Bank.user.getBalance());
+        if(amount.getText().matches("\\d+(\\.\\d+)?")) {
+            double am = Double.parseDouble(amount.getText());
+            boolean bool = Bank.user.withdraw(am);
+            if (bool) {
+                currentbalance.setStyle("-fx-text-fill: green;");
+                currentbalance.setText("Current Balance: " + Bank.user.getBalance());
+            } else {
+                currentbalance.setStyle("-fx-text-fill: red;");
+                currentbalance.setText("Sorry, your balance is insufficient");
+            }
         }
         else{
             currentbalance.setStyle("-fx-text-fill: red;");
-            currentbalance.setText("Sorry, your balance is insufficient");
+            currentbalance.setText("Please enter numbers!");
         }
     }
 
