@@ -24,6 +24,7 @@ public class ServicesController {
     @FXML private Button withdrawBtn;
     @FXML private Button loginBtn;
     @FXML private Button statementBtn;
+
     public void loginPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("login.fxml"));
         stage = (Stage) loginBtn.getScene().getWindow();
@@ -48,9 +49,12 @@ public class ServicesController {
         stage.setScene(scene);
         stage.show();
     }
-    public void loanPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("loan.fxml"));
-        stage = (Stage) loanBtn.getScene().getWindow();
+    public void loanStatementPage(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("loanstatement.fxml"));
+        root = loader.load();
+        LoanStatementController loanStatementController = loader.getController();
+        loanStatementController.loanStatement();
+        stage = (Stage) statementBtn.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -74,7 +78,7 @@ public class ServicesController {
         root = loader.load();
         StatementController statementController = loader.getController();
         statementController.listStatement();
-        stage = (Stage) balanceBtn.getScene().getWindow();
+        stage = (Stage) statementBtn.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

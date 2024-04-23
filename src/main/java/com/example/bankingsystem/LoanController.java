@@ -15,15 +15,18 @@ public class LoanController {
     @FXML private Stage stage;
     @FXML private Scene scene;
     @FXML private Parent root;
-    @FXML private Button homeBtn;
+    @FXML private Button stmtBtn;
     @FXML private Button loanBtn;
     @FXML private TextField amountField;
     @FXML private Label label;
 
 
-    public void servicesPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("services.fxml"));
-        stage = (Stage) homeBtn.getScene().getWindow();
+    public void loanStatementPage(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("loanstatement.fxml"));
+        root = loader.load();
+        LoanStatementController loanStatementController = loader.getController();
+        loanStatementController.loanStatement();
+        stage = (Stage) stmtBtn.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

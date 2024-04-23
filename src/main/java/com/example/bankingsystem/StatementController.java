@@ -38,12 +38,11 @@ public class StatementController {
         ObservableList<Transaction> observableList = FXCollections.observableArrayList(Bank.user.getTransactions());
         listView.setItems(observableList);
 
-        // Set up a listener for handling item selection
         listView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                Transaction transaction = newValue; // Get the selected transaction
+                Transaction transaction = newValue;
 
-                // Set the text of the labels using the transaction details
+
                 label1.setText("Transaction No: " + transaction.getTransactionNo());
                 label2.setText("Sender Account Name: " + transaction.getSenderAcc().getName());
                 label3.setText("Sender ID: " + transaction.getSenderAcc().getId());

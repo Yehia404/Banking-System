@@ -32,7 +32,7 @@
       </Label>
       <TextField fx:id="amountField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Button fx:id="loanBtn" mnemonicParsing="false" onAction="#loanRequest" prefHeight="26.0" prefWidth="101.0" text="Confirm Loan" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-      <Button fx:id="homeBtn" mnemonicParsing="false" onAction="#servicesPage" text="Back to Services" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+      <Button fx:id="stmtBtn" mnemonicParsing="false" onAction="#loanStatementPage" text="Back to Loan Statement" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
       <Label fx:id="label" alignment="CENTER" prefHeight="26.0" prefWidth="273.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
          <font>
             <Font size="17.0" />
