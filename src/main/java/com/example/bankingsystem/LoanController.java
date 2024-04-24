@@ -36,6 +36,7 @@ public class LoanController {
         if (amountField.getText().isEmpty()) {
             label.setStyle("-fx-text-fill: red;");
             label.setText("Please enter a valid amount");
+            return;
         }
         if(amountField.getText().matches("\\d+(\\.\\d+)?")) {
             double amount = Double.parseDouble(amountField.getText());

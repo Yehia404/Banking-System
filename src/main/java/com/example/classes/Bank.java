@@ -36,10 +36,20 @@ public class Bank {
             System.out.println("Balance: " + account.getBalance());
             System.out.println(account.getLoans());
             System.out.println(account.getTransactions());
-
+            System.out.println("*---------------------------------------------------*");
         }
+
         Account acc = Login(0,"a");
+        Account acc1 = Login(100,"a");
+        Account acc2 = searchAcc(1);
+        Account acc3 = searchAcc(200);
+
+        acc.withdraw(200.50);
+        acc.withdraw(100000);
+        acc2.deposit(1000);
+        acc.transfer(acc2,100000);
     }
+
 
     public static Account Login(int id,String password){
         for (Account account : accounts) {

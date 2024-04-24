@@ -21,11 +21,12 @@ public class DepositController {
     @FXML private Button confirm;
     @FXML private TextField amount;
     @FXML private Label currentbalance;
+
     public void deposit(ActionEvent event) throws IOException{
         if (amount.getText().isEmpty()) {
             currentbalance.setStyle("-fx-text-fill: red;");
             currentbalance.setText("Please enter a valid amount");
-
+            return;
         }
         if(amount.getText().matches("\\d+(\\.\\d+)?")) {
             double am = Double.parseDouble(amount.getText());
