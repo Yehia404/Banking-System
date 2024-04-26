@@ -33,7 +33,7 @@ public class BankTest {
     }
     @Test
     @Order(2)
-    public void searchTesting() {
+    public void searchTest() {
         //id=0
         Account acc1 = Bank.accounts.get(0);
         Account acc2 = Bank.searchAcc(0);

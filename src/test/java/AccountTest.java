@@ -9,7 +9,7 @@ public class AccountTest {
 
     @Test
     @BeforeEach
-    public void createAcc(){
+    public void createAccTest(){
         acc = new Account("Yehia","1234","Yehia@gmail.com",3000);
         assertNotNull(acc);
         assertEquals("Yehia",acc.getName());
@@ -34,7 +34,7 @@ public class AccountTest {
 
     @Test
     @Order(3)
-    public void loanTest(){
+    public void requestLoanTest(){
         acc.loanRequest(1000000);
         Loan loan = acc.getLoans().get(0);
         assertNotNull(loan);

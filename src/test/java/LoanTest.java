@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class LoanTest {
     @Test
-    public void createLoan(){
+    public void createLoanTest(){
         double amount =1234.54;
         Loan loan= new Loan(amount);
         assertNotNull(loan);
