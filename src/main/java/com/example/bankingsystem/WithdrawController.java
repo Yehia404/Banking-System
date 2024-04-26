@@ -28,8 +28,9 @@ public class WithdrawController {
         if (amount.getText().isEmpty()) {
             currentbalance.setStyle("-fx-text-fill: red;");
             currentbalance.setText("Please enter a valid amount");
-
+            return;
         }
+
         if(amount.getText().matches("\\d+(\\.\\d+)?")) {
             double am = Double.parseDouble(amount.getText());
             boolean bool = Bank.user.withdraw(am);

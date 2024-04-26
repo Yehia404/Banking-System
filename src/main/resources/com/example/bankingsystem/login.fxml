@@ -5,12 +5,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgba(240,205,100,0.42)" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankingsystem.LoginController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="631.0" style="-fx-background-color: #B8E2F2" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankingsystem.LoginController">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="244.0" />
@@ -24,7 +26,7 @@
    <children>
       <Label alignment="CENTER" prefHeight="62.0" prefWidth="202.0" text="Banking System" GridPane.columnIndex="1" GridPane.halignment="CENTER">
          <font>
-            <Font size="25.0" />
+            <Font name="System Bold Italic" size="25.0" />
          </font>
       </Label>
       <Label text="Password" GridPane.halignment="CENTER" GridPane.rowIndex="1">
@@ -32,7 +34,7 @@
             <Insets top="20.0" />
          </GridPane.margin>
          <font>
-            <Font size="15.0" />
+            <Font name="System Italic" size="20.0" />
          </font>
       </Label>
       <Label text="Account ID" GridPane.halignment="CENTER" GridPane.rowIndex="1">
@@ -40,16 +42,16 @@
             <Insets top="-60.0" />
          </GridPane.margin>
          <font>
-            <Font size="15.0" />
+            <Font name="System Italic" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="accField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <TextField fx:id="accField" promptText="Enter an Account ID" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets top="-60.0" />
          </GridPane.margin>
       </TextField>
-      <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginPage" prefHeight="26.0" prefWidth="90.0" text="Login" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-      <PasswordField fx:id="passField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+       <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginPage" prefHeight="36.0" prefWidth="110.0" text="Login" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" style="-fx-background-color: #4e8fd9; -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 16px;" />
+      <PasswordField fx:id="passField" promptText="Enter a Password" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets top="20.0" />
          </GridPane.margin>
@@ -59,6 +61,11 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="createButton" mnemonicParsing="false" onAction="#createAccountPage" prefHeight="26.0" prefWidth="112.0" text="Create Account" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+       <Button fx:id="createButton" mnemonicParsing="false" onAction="#createAccountPage" prefHeight="36.0" prefWidth="132.0" text="Create Account" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" style="-fx-background-color: #4e8fd9; -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 16px;" />
+      <ImageView fitHeight="138.0" fitWidth="188.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <image>
+            <Image url="@Bank.png" />
+         </image>
+      </ImageView>
    </children>
 </GridPane>

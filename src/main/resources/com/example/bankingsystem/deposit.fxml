@@ -6,29 +6,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankingsystem.DepositController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B8E2F2" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankingsystem.DepositController">
    <children>
-      <TextField fx:id="amount" layoutX="163.0" layoutY="187.0" />
-      <Label layoutX="36.0" layoutY="180.0" text="Amount: ">
+      <TextField fx:id="amount" layoutX="150.0" layoutY="169.0" prefHeight="26.0" prefWidth="278.0" promptText="Enter an Amount" />
+      <Label layoutX="51.0" layoutY="167.0" text="Amount">
          <font>
-            <Font size="27.0" />
+            <Font name="System Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="217.0" layoutY="57.0" text="Deposit" textFill="#7364b4">
+      <Label layoutX="186.0" layoutY="42.0" text="Account Deposit">
          <font>
-            <Font size="36.0" />
+            <Font name="System Bold Italic" size="30.0" />
          </font>
       </Label>
-      <Label fx:id="currentbalance" layoutX="36.0" layoutY="307.0" prefHeight="34.0" prefWidth="334.0">
+      <Label fx:id="currentbalance" alignment="CENTER" layoutX="133.0" layoutY="229.0" prefHeight="34.0" prefWidth="334.0">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Button fx:id="homebtn" layoutX="393.0" layoutY="304.0" mnemonicParsing="false" onAction="#ServicesPage" text="return to services">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="confirm" layoutX="352.0" layoutY="187.0" mnemonicParsing="false" onAction="#deposit" text="confirm" />
+      <Button fx:id="homebtn" layoutX="259.0" layoutY="341.0" mnemonicParsing="false" onAction="#ServicesPage" style="-fx-background-color: #4e8fd9; -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 15px;" text="return to services" />
+
+      <Button fx:id="confirm" layoutX="437.0" layoutY="341.0" mnemonicParsing="false" onAction="#deposit" style="-fx-background-color: #4e8fd9; -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 15px;" text="Confirm Deposit" />
    </children>
 </AnchorPane>

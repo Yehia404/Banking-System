@@ -5,36 +5,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankingsystem.BalanceController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B8E2F2" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="com.example.bankingsystem.BalanceController">
    <children>
       <Label fx:id="nameLabel" layoutX="52.0" layoutY="129.0" text="Name:">
          <font>
-            <Font size="20.0" />
+            <Font name="System Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="215.0" layoutY="44.0" text="Account Details" textFill="#704ba9">
+      <Label layoutX="208.0" layoutY="44.0" text="Account Details">
          <font>
-            <Font size="25.0" />
+            <Font name="System Bold Italic" size="25.0" />
          </font>
       </Label>
       <Label fx:id="emailLabel" layoutX="52.0" layoutY="169.0" text="Email:">
          <font>
-            <Font size="20.0" />
+            <Font name="System Italic" size="20.0" />
          </font>
       </Label>
       <Label fx:id="balanceLabel" layoutX="52.0" layoutY="245.0" text="Balance:">
          <font>
-            <Font size="20.0" />
+            <Font name="System Italic" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="Homesbtn" layoutX="230.0" layoutY="334.0" mnemonicParsing="false" onAction="#ServicesPage" text="Return to Services">
+
+      <Button fx:id="Homesbtn" layoutX="230.0" layoutY="334.0" mnemonicParsing="false" onAction="#ServicesPage" text="Return to Services" style="-fx-background-color: #4e8fd9; -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 15px;" >
          <font>
             <Font size="15.0" />
          </font>
       </Button>
       <Label fx:id="idLabel" layoutX="52.0" layoutY="208.0" text="ID:">
          <font>
-            <Font size="20.0" />
+            <Font name="System Italic" size="20.0" />
          </font>
       </Label>
    </children>
