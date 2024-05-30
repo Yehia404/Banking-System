@@ -17,7 +17,7 @@ public class Bank {
         accounts.add(Acc3);
         accounts.add(Acc4);
         accounts.add(Acc5);
-
+//
         Acc1.transfer(Acc2,200);
         Acc3.transfer(Acc4,660);
         Acc5.transfer(Acc1,100);
